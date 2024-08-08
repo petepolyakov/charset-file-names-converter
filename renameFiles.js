@@ -5,7 +5,7 @@ const unidecode = require('unidecode');
 // Directory to scan
 const directoryPath = './your-directory'; // Change this to your target directory
 
-// Function to rename files
+// Function to rename files in a directory recursively
 function renameFilesInDirectory(directory) {
   fs.readdir(directory, (err, files) => {
     if (err) {
@@ -31,7 +31,7 @@ function renameFilesInDirectory(directory) {
               if (err) {
                 console.error('Error renaming file:', err);
               } else {
-                console.log(`Renamed: ${file} -> ${asciiName}`);
+                console.log(`Renamed: ${filePath} -> ${newFilePath}`);
               }
             });
           }
